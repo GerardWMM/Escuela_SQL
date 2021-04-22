@@ -39,10 +39,10 @@ namespace Escuela
             DGAlumnos.Columns[4].Visible = false;
             DGAlumnos.Columns[3].Visible = false;
 
-            List<Profesore> profesores = bd.Profesores.
-                Where(Profesores => Profesores.IdProfesor == cursoSeleccionado.IdProfesor).ToList();
+            Profesore profesor = bd.Profesores.
+                Where(Profesores => Profesores.IdProfesor == cursoSeleccionado.IdProfesor).FirstOrDefault();
 
-            txtProfesores.Text = profesores.ToString();
+            txtProfesores.Text = profesor.Nombre.ToString();
        
         }
     }
